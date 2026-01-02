@@ -19,8 +19,10 @@
             align-items: center;
             min-height: 100vh;
             backdrop-filter: blur(5px);
+             
             
         }
+        
         h3{
              font-size: 2vw; 
              color: rgb(228, 227, 227);
@@ -32,16 +34,24 @@
         a{
             text-decoration: none;
         }
+
+        @media screen and (max-width: 550px) {
+         .heading{
+            font-size: 30px; 
+        }
+        }
     </style>
 </head>
 
 <body>
     
-    <main>
-            <a href="./form.html">
-                <h3>Click to enter the creator's circle</h3>
-            </a>
-    </main>
+    <a href="./form.html">
+        <main>
+        
+                    <h3 class="heading">Click to enter the creator's circle</h3>
+        
+        </main>
+    </a>
     
 </body>
 </html>

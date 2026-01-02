@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mountains+of+Christmas:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
     <title>Document</title>
     <style>
         body{
@@ -13,11 +14,19 @@
             background-size: cover;
             background-repeat: no-repeat;
             
-              display: flex;
+            display: flex;
             justify-content: center;
             align-items: center;
             backdrop-filter: blur(6px);
             flex-direction: column;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            padding: 20px;           
         }
         #form{
             display: flex;
@@ -34,7 +43,7 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
             box-shadow: 0 8px 32px 0 rgba(0,0,0,0.1);
             color: white;
-            width: 90%;
+            width: 100%;
             gap: 1.25rem;
             margin-right: 15px;
             
@@ -56,11 +65,18 @@
             background: rgba(3, 167, 255, 0.3);
         
         }
-        h1,h2{
+
+        .heading{
             text-align: center;
+            
+        }
+        h1{
+           font-size: 60px; 
             font-weight: 500;
-            font-family: "Rubik Mono One", monospace;
-            color:white
+            font-family: "Mountains of Christmas", serif;
+            color:white;
+            
+            
         }
 
         .input-group input{
@@ -75,108 +91,141 @@
 
         }
 
-        .check-div{
-            background: rgba(255,255,255,0.3);
-            padding: 1rem;
-            border-radius: 15px;
-            
-        }
+        
 
-        .check-div textarea{
+        .learn-textarea{
             border: transparent;
-            background: rgb(0 0 0 / 30%);
+            background: #3b4663;
             border-radius: 10px;
-            padding: 15px;
+            padding: 30px;
             position: relative;
-            
             color: rgb(255, 255, 255);
             resize: none;
+            
+            
         }
 
+        .check-div {
+            display: grid;
+            gap: 12px;
+            background: rgba(255,255,255,0.3);
+            
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .checkbox-container {
+        display: grid;
+        grid-template-columns: 22px 1fr;  
+        align-items: center;
+        column-gap: 10px;
+        cursor: pointer;
+        color: white;
+        }
+
+
         input[type="checkbox"],
-input[type="radio"] {
-  accent-color: #4f46e5; /* any color */
-}
+        input[type="radio"] {
+        accent-color: #4f46e5; 
+        position: relative;
+        top: 7px;
+       
+        }
+
+        @media screen and (max-width: 550px) {
+        .learn-textarea {
+            background-color: #642e2e; 
+        }
+        }
+        
 
     </style>
 </head>
 <body>
-    <header>
-        <h1>Creator's <br>Registration Form </h1>
-    </header>
+    <div class="heading">
+        <h1>Creator's <br> Registration Form </h1>
+    </div>
     <main>
-        <section id="form">
-            <form action="">
-                <div class="input-group">
-                    <label for="fname">Fname</label>
-                    <input type="text" id="fname" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="tel" id="phone" name="phone" pattern="[6789][0-9]{9}" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="area of interests">area of interets</label><br><br>
-                    <div class="check-div">
-                        <label class="container">Video editing
-                        <input type="checkbox" >
-                        <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Design
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Photography
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Other
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                        </label>
+        <div class="page">
+            <section id="form">
+                <form action="">
+                    <div class="input-group">
+                        <label for="fname">Name</label>
+                        <input type="text" id="fname" required>
                     </div>
-                </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Phone</label>
+                        <input type="tel" id="phone" name="phone" pattern="[6789][0-9]{9}" required>
+                    </div>
+                    
+                    <div class="input-group">
+                    <label>Area of interests</label><br><br>
 
-                <div class="input-group">
+                    <div class="check-div">
+
+                        <label class="checkbox-container">
+                        <input type="checkbox" name="interest" value="video">
+                        <span>Video editing</span>
+                        </label>
+
+                        <label class="checkbox-container">
+                        <input type="checkbox" name="interest" value="design">
+                        <span>Design</span>
+                        </label>
+
+                        <label class="checkbox-container">
+                        <input type="checkbox" name="interest" value="writing">
+                        <span>Writing</span>
+                        </label>
+
+                        <label class="checkbox-container">
+                        <input type="checkbox" name="interest" value="others">
+                        <span>Others</span>
+                        </label>
+
+                    </div>
+                    </div>
+
+                    <div class="input-group">
                     <br>
-                    <label for="exp">Experience level</label><br><br>
+                    <label>Experience level</label><br><br>
+
                     <div class="check-div">
-                        <label class="container">Beginner
-                        <input type="radio" name="options" >
-                        <span class="checkmark"></span>
+
+                        <label class="checkbox-container">
+                        <input type="radio" name="options" value="beginner">
+                        <span>Beginner</span>
                         </label>
-                        <label class="container">Intermediate
-                        <input type="radio" name="options">
-                        <span class="checkmark"></span>
+
+                        <label class="checkbox-container">
+                        <input type="radio" name="options" value="intermediate">
+                        <span>Intermediate</span>
                         </label>
-                        <label class="container">Advanced
-                        <input type="radio" name="options">
-                        <span class="checkmark"></span>
+
+                        <label class="checkbox-container">
+                        <input type="radio" name="options" value="advanced">
+                        <span>Advanced</span>
                         </label>
-                    
+
+                    </div>
                     </div>
 
-                </div>
-                <br><br>
-                <label for="what-to-learn">What to learn</label><br><br>
-                <div class="check-div" style="display: flex; flex-direction: column; ">
-                    
-                    <textarea name="learn" id="para-learn" placeholder="Type something"></textarea>
-                </div>
-
-                <div >
-                    <button>submit</button>
-                </div>
-
-            </form>
-        </section>
+                    <br>
+                    <label for="what-to-learn">What to learn ?</label><br><br>
+                    <div class="check-div" style="display: flex; flex-direction: column; ">
+            
+                        <textarea name="learn" class="learn-textarea"  placeholder="Type something"></textarea>
+                    </div>
+                    <div >
+                        <button>submit</button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
     <footer></footer>
 </body>
