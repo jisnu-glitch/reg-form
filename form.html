@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mountains+of+Christmas:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/free-photo/abstract-gradient-background-with-grain-texture-captivating-noise-airbrush-minimalist-wallpaper_8048-560.jpg?semt=ais_hybrid&w=740&q=80");
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+              display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            flex-direction: column;
+        }
+        #form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 500px;
+            background: rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.1);
+            color: white;
+            width: 90%;
+            gap: 1.25rem;
+            margin-right: 15px;
+            
+        }
+
+        #form button{
+            background: rgba(149, 203, 237, 0.3);
+            border: none;
+            width: 100%;
+            position: relative;
+            top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #form button:hover{
+            background: rgba(3, 167, 255, 0.3);
+        
+        }
+        h1,h2{
+            text-align: center;
+            font-weight: 500;
+            font-family: "Rubik Mono One", monospace;
+            color:white
+        }
+
+        .input-group input{
+            background: rgba(255,255,255,0.05);
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+
+        }
+
+        .check-div{
+            background: rgba(255,255,255,0.3);
+            padding: 1rem;
+            border-radius: 15px;
+            
+        }
+
+        .check-div textarea{
+            border: transparent;
+            background: rgb(0 0 0 / 30%);
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+            
+            color: rgb(255, 255, 255);
+            resize: none;
+        }
+
+        input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #4f46e5; /* any color */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Creator's <br>Registration Form </h1>
+    </header>
+    <main>
+        <section id="form">
+            <form action="">
+                <div class="input-group">
+                    <label for="fname">Fname</label>
+                    <input type="text" id="fname" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="tel" id="phone" name="phone" pattern="[6789][0-9]{9}" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="area of interests">area of interets</label><br><br>
+                    <div class="check-div">
+                        <label class="container">Video editing
+                        <input type="checkbox" >
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Design
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Photography
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Other
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <br>
+                    <label for="exp">Experience level</label><br><br>
+                    <div class="check-div">
+                        <label class="container">Beginner
+                        <input type="radio" name="options" >
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Intermediate
+                        <input type="radio" name="options">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Advanced
+                        <input type="radio" name="options">
+                        <span class="checkmark"></span>
+                        </label>
+                    
+                    </div>
+
+                </div>
+                <br><br>
+                <label for="what-to-learn">What to learn</label><br><br>
+                <div class="check-div" style="display: flex; flex-direction: column; ">
+                    
+                    <textarea name="learn" id="para-learn" placeholder="Type something"></textarea>
+                </div>
+
+                <div >
+                    <button>submit</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
